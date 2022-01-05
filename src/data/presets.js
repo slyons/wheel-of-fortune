@@ -503,7 +503,11 @@ export const PRESET2 = {
       extra: '1d100 gold coins rain down in a 30ft radius. Anyone caught in the radius takes 1d10 points of damage.',
       fontMod: 1.4
     },
-    { name: 'Dialogue', extra: 'You helplessly speak your thoughts to others for the next minute.', fontMod: 1.4 },
+    {
+      name: 'Outer Dialogue',
+      extra: 'You helplessly speak your thoughts to others for the next minute.',
+      fontMod: 1.4
+    },
     {
       name: 'Quake',
       extra:
@@ -511,7 +515,7 @@ export const PRESET2 = {
       fontMod: 1.4
     },
     { name: 'Tired', extra: 'You gain 1 point of Exhaustion.', fontMod: 1.4 },
-    { name: 'Door', extra: 'A door appears in front of you. It is locked.', fontMod: 1.4 },
+    { name: 'Door. Just a door.', extra: 'A door appears in front of you. It is locked.', fontMod: 1.4 },
     { name: 'Mirror Mirror', extra: 'You cast Mirror Image on yourself.', fontMod: 1.4 },
     {
       name: 'Ajna',
@@ -543,7 +547,7 @@ export const PRESET2 = {
       extra: 'You permanently grow a pair of small horns on your forehead. Remove Curse will remove them.',
       fontMod: 1.4
     },
-    { name: 'Teddy Rex', extra: 'A tyrannosaurus rex appears within 20ft of you. It loves you.', fontMod: 1.4 },
+    { name: 'Theodore Rex', extra: 'A tyrannosaurus rex appears within 20ft of you. It loves you.', fontMod: 1.4 },
     { name: 'Drought', extra: 'You evaporate any water within 1 mile of you.', fontMod: 1.4 },
     {
       name: 'Omen',
@@ -615,7 +619,7 @@ export const PRESET2 = {
       fontMod: 1.4
     },
     {
-      name: 'Rally',
+      name: '5 hour energy',
       extra: 'You regain all spell slots and ability uses but gain 2 points of Exhaustion.',
       fontMod: 1.4
     },
@@ -652,7 +656,7 @@ export const PRESET2 = {
     { name: 'Medium', extra: 'You can speak to the dead for 1 minute.', fontMod: 1.4 },
     { name: 'Blunder', extra: 'Your next ability check or saving throw is a critical failure.', fontMod: 1.4 },
     {
-      name: 'Relocate',
+      name: 'CHANGE PLACES',
       extra: 'You teleport up to 3 creatures within 30ft of you to an unoccupied space within 30ft of you.',
       fontMod: 1.4
     },
@@ -670,13 +674,13 @@ export const PRESET2 = {
       fontMod: 1.4
     },
     {
-      name: 'Party Portal',
+      name: 'Portal to Jersey',
       extra: 'A portal opens within 60ft of you to Diabolis, the Plane of Devils, for 1 minute.',
       fontMod: 1.4
     },
     { name: 'Noodle arms', extra: 'You gain a -3 to all attack and damage rolls for the next hour.', fontMod: 1.4 },
     {
-      name: 'Cue the choir',
+      name: 'God-awful Portals',
       extra: 'A portal opens within 60ft of you to Exaltus, the Plane of Celestials, for 1 minute.',
       fontMod: 1.4
     },
