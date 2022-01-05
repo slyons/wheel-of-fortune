@@ -4,9 +4,9 @@
       <a href="#" class="button" @click.prevent.stop="displayOptions">Options</a>
     </div>
 
-    <div class="show-records-container">
+    <!--<div class="show-records-container">
       <a href="#" class="button" @click.prevent.stop="displayRecords">Records</a>
-    </div>
+    </div>-->
 
     <transition name="fade">
       <RecordsPanel v-if="showRecords" @close="hideRecords" />
@@ -23,6 +23,7 @@
 
       <div class="wheel-footer-area">
         <div class="wheel-footer">
+          <div class="wheel-result"><strong v-html="resultName"></strong></div>
           <div class="wheel-result" v-html="resultText"></div>
           <a href="#" class="button" @click.prevent="startSpin">{{ spinText }}</a>
         </div>
@@ -49,6 +50,7 @@ export default {
       showRecords: false,
       spinning: false,
       spinText: 'Spin!',
+      resultName: '',
       resultText: 'Ready. Get set.'
     };
   },
@@ -56,6 +58,7 @@ export default {
     spins: state => state.spins,
     name: state => state.data.name || 'Wheel of Fortune',
     winningText: state => state.data.winningText || 'Result: <b>%s</b>',
+    winningName: state => state.data.winningText || '',
     background: state => state.data.background || '',
     prizes: state => state.available,
     headerWidth: state => state.size
@@ -81,7 +84,12 @@ export default {
       const prize = this.prizes[index];
       this.spinning = false;
       this.spinText = 'Spin again!';
-      this.resultText = this.winningText.replace('%s', prize.name);
+      this.resultName = '(' + (index + 1) + ') ' + prize.name;
+      if (prize.extra) {
+        this.resultText = prize.extra;
+      } else {
+        this.resultText = this.winningText.replace('%s', prize.name);
+      }
     },
 
     // Called by the Spin button. Requests the Wheel to start spinning.
@@ -92,6 +100,7 @@ export default {
 
         this.spinning = true;
         this.spinText = 'Spinning...';
+        this.resultName = '&#8203;';
         this.resultText = '&#8203;';
         this.$refs.wheel.startSpin();
       }
@@ -141,6 +150,10 @@ export default {
   padding: 12px;
   font-size: 18px;
   border-radius: 3px;
+}
+.wheel-footer strong {
+  font-weight: bolder;
+  font-size: 24px;
 }
 .wheel-result {
   margin-bottom: 6px;
